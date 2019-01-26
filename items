@@ -1,0 +1,132 @@
+mport sqlite3
+db = sqlite3.connect("clothes1.sqlite")
+
+#MEN CLOTHES
+
+db.execute("create table if not exists Tshirts (item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into Tshirts (item_id , item_name , price, stock,size) values (01,'Polo t-shirt',1100,10,'S,M,L,XL,XXL')")
+db.execute("insert into Tshirts values (02,'Nike V neck',1200,6,'M,L,XXL')")
+db.execute("insert into Tshirts values (03,'Puma round neck',900,7,'L,XL,XXL,XXXL')")
+db.execute("insert into Tshirts values (04,'Van heusan round neck',1700,4,'M,L,XL')")
+db.execute("insert into Tshirts values (05,'Adidas shirt',1500,8,'S,M,XL,XXL')")
+db.execute("insert into Tshirts values (06,'Roadster',755,11,'S,M,L,XL,XXL')")
+db.execute("insert into Tshirts values (07,'Arrow shirts',1250,5,'S,L,XL')")
+db.execute("insert into Tshirts values (08,'Marks & Spencer',1330,4,'M,L,XXL')")
+db.execute("insert into Tshirts values (09,'Blackburrey',2000,6,'L,XL,XXL')")
+db.execute("insert into Tshirts values (10,'YSL',2200,4,'L,XL')")
+
+cursor = db.cursor()
+cursor.execute("select * from tshirts")
+print("List of Tshirts")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
+
+
+db.execute("create table if not exists Denims (item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into Denims (item_id , item_name , price, stock,size) values (11,'Polo ethnic jeans',2100,10,'S,M,L,XL,XXL')")
+db.execute("insert into Denims values (12,'Nike ankel jeans',2200,6,'M,L,XXL')")
+db.execute("insert into Denims values (13,'Puma straight jeans',1900,7,'L,XL,XXL,XXXL')")
+db.execute("insert into Denims values (14,'Adidas slim fits',2500,8,'S,M,XL,XXL')")
+db.execute("insert into Denims values (15,'Arrow jeans',2250,5,'S,L,XL')")
+db.execute("insert into Denims values (16,'Blackburrey',2050,3,'L,XL,XXL')")
+db.execute("insert into Denims values (17,'Vero Moda',2200,4,'L,XL')")
+
+cursor = db.cursor()
+cursor.execute("select * from Denims")
+print("\n")
+print("List of Denims")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
+
+db.execute("create table if not exists WinterWear(item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into WinterWear (item_id , item_name , price, stock,size) values (18,'Polo Hoody',2150,10,'M,L,XL,XXL')")
+db.execute("insert into WinterWear values (19,'Nike Sweatshirt',2200,6,'S,M,L,XXL')")
+db.execute("insert into WinterWear values (20,'Puma turtle neck hoody',1700,7,'L,XL,XXL')")
+db.execute("insert into WinterWear values (21,'Adidas slim fit sweatshirt',2500,8,'S,M,XL,XXL')")
+db.execute("insert into WinterWear values (22,'Arrow Hoody',2250,5,'S,M,XL')")
+
+cursor = db.cursor()
+cursor.execute("select * from WinterWear")
+print("\n")
+print("List of Winter Wears")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
+
+db.execute("create table if not exists Suits(item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into Suits (item_id , item_name , price, stock,size) values (23,'Burberry 2 piece',21500,5,'XL,XXL')")
+db.execute("insert into Suits values (24,'Prada 3 piece ',22000,4,'S,L,XL')")
+db.execute("insert into Suits values (25,'Gucci',17000,7,'XL,XXL')")
+db.execute("insert into Suits values (26,'YSL Waist coat',7500,8,'M,XL')")
+db.execute("insert into Suits values (27,'Emporio Armani',220000,3,'L,XL')")
+db.execute("insert into Suits values (28,'Raymond 2 piece',18000,10,'L,XL,XXL')")
+db.execute("insert into Suits values (29,'Louise Philippe 3 peice',32000,3,'L,XL')")
+db.execute("insert into Suits values (30,'Louis Vuitton',37000,3,'M,L,XL')")
+db.execute("insert into Suits values (31,'Vavci',22000,8,'S,M,L,XL')")
+
+
+cursor = db.cursor()
+cursor.execute("select * from Suits")
+print("\n")
+print("List of Suits")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
+
+db.execute("create table if not exists TrackPants(item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into TrackPants (item_id , item_name , price, stock, size) values (32,'Polo long',2100,8,'S,L,XL,XXL')")
+db.execute("insert into TrackPants values (33,'Nike short',2400,3,'M,L,XXL')")
+db.execute("insert into TrackPants values (34,'Puma ',1900,7,'L,XL,XXL,XXXL')")
+db.execute("insert into TrackPants values (35,'Jordan',1700,4,'S,M,L,XL')")
+db.execute("insert into TrackPants values (36,'Adidas ',1500,8,'S,XL,XXL')")
+db.execute("insert into TrackPants values (37,'Roadster',955,11,'M,L,XL,XXL')")
+db.execute("insert into TrackPants values (38,'Blackburrey',2000,6,'L,XL,XXL')")
+db.execute("insert into TrackPants values (39,'YSL',2200,4,'M,L,XL')")
+db.execute("insert into TrackPants values(40,'Lee',1500,6,'S,L,XXL')")
+
+cursor = db.cursor()
+cursor.execute("select * from TrackPants")
+print("\n")
+print("List of Track Pants")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
+
+
+#WOMEN CLOTHES
+
+db.execute("create table if not exists ShirtsTshirts (item_id integer PRIMARY KEY, item_name text, price integer, stock integer, size text)")
+db.execute("insert into ShirtsTshirts (item_id , item_name , price, stock,size) values (41,'USPolo t-shirt',1500,9,'S,M,L,XL')")
+db.execute("insert into ShirtsTshirts values (42,'Nike Tank top',600,6,'S,M,L,XXL')")
+db.execute("insert into ShirtsTshirts values (43,'Puma t-shirt',1100,4,'M,L,XL,')")
+db.execute("insert into ShirtsTshirts values (44,'Aeropostale Shirts',1700,8,'S,M,L,XL')")
+db.execute("insert into ShirtsTshirts values (45,'Adidas Tshirts',1550,3,'S,M,XL,XXL')")
+db.execute("insert into ShirtsTshirts values (46,'UCB T-shirts',1250,11,'M,L,XL,XXL')")
+db.execute("insert into ShirtsTshirts values (47,'Tommy Hilfiger Turtle neck ',1350,5,'S,L,XL')")
+db.execute("insert into ShirtsTshirts values (48,'Versace tees',2330,4,'M,L,XL')")
+db.execute("insert into ShirtsTshirts values (49,'Guess Tees',2200,3,'L,XL')")
+db.execute("insert into ShirtsTshirts values (50,'Abercrombie & Fitch Tshirt',1500,4,'M,L')")
+db.execute("insert into ShirtsTshirts values (51,'Diesel',2500,4,'S,M,L')")
+
+
+cursor = db.cursor()
+cursor.execute("select * from ShirtsTshirts")
+print("\n")
+print("List of Shirts and Tshirts")
+print("Item Number, Item Name , Price , Stocks, Size Available")
+print("-"*55)
+for row in cursor:
+    print(row)
+cursor.close()
