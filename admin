@@ -1,0 +1,46 @@
+try:
+    import tkinter
+except ImportError:
+    import Tkinter as tkinter
+a=tkinter.Tk()
+class men:
+    def shirts(self):
+        import pymysql
+        db=pymysql.connect("localhost","abs","admin1313","purple pebbles")
+        cursor=db.cursor()
+        cursor.execute("SELECT VERSION()")
+        data=cursor.fetchone()
+        print("database version : %s" %data)
+        cursor.execute("select * from  tshirts ")
+        for row in cursor:
+            print(row)
+        db.close()
+def display():
+
+    a3=tkinter.Toplevel(a)
+    a3.geometry('700x700')
+    a3.title("PURPLE PEBBLES")
+    a6=men()
+    m=a6.shirts()
+    text=tkinter.Text(a3)
+    text.insert("1.0","LET'S NOT MISS THE CHANCE TO AVAIL THE WARMTH OF PURPLE PEBBLES")
+    text.pack()
+    a3.mainloop()
+
+def operation():
+    a1=tkinter.Toplevel(a)
+    a1.geometry('700x550')
+    a1['padx']=36
+    a1.title("SIGN IN")
+    label=tkinter.Label(a1,text="PURPLE PEBBLES")
+    label.grid(row=0,column=0,columnspan=2)
+    a1.columnconfigure(0, weight=100)
+    a1.columnconfigure(1, weight=100)
+    usernamelabel=tkinter.Label(a1,text="USERNAME")
+    usernamelabel.grid(row=1,column=0,columnspan=2,sticky='w')
+    username=tkinter.Entry(a1,textvariable=tkinter.StringVar())
+    m1=username.get()
+    username.grid(row=2,column=0,columnspan=2,sticky='w')
+    passwordlabel=tkinter.Label(a1,text="PASSWORD")
+    passwordlabel.grid(row=3,column=0,columnspan=2,sticky='w')
+
